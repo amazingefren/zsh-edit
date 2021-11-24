@@ -15,6 +15,18 @@ bind \
     '^[l' 'git log' \
     '^[s' 'git status -Mu --show-stash'
 
+# You can hide commands by prepending them with +, @ or -.
+
+# Use + to print output below the current prompt and start a new command line:
+bind '^[s' '+git status'
+
+# Use @ to leave the current prompt unmodified (if possible):
+bind '^[^L' '@git log'
+
+# Use - to update the current prompt in place:
+bind '^[-' '-pushd -1'
+bind '^[=' '-pushd +0'
+
 # List duplicate keybindings in the main keymap or another one:
 bind -d
 bind -dM viins
